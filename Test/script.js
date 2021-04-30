@@ -1,4 +1,4 @@
-import firebase from "firebase/app"
+import firebase from 'firebase'
 import "firebase/auth"
 
 const app = firebase.initializeApp({
@@ -12,5 +12,16 @@ const app = firebase.initializeApp({
   appId: "1:451932794664:web:599007f433966e8bb46a1d"
 })
 
-export const auth = app.auth()
-export default app
+uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }}
+
+document.getElementById('myB').addEventListener("click",function(){
+    alert('hi')
+})
